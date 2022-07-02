@@ -1,0 +1,12 @@
+[get_html] -> CPU time: 0.046875 s, Real time: 0.352647 s
+[get_data] -> CPU time: 0.125000 s, Real time: 0.130728 s
+[current_data] -> CPU time: 0.031250 s, Real time: 0.019989 s
+[to_csv] -> CPU time: 0.000000 s, Real time: 0.001001 s
+[to_json] -> CPU time: 0.000000 s, Real time: 0.002998 s
+[main] -> CPU time: 0.203125 s, Real time: 0.512359 s
+[get_html] -> CPU time: 0.062500 s, Real time: 0.390343 s
+[get_data] -> CPU time: 0.203125 s, Real time: 0.205409 s
+[current_data] -> CPU time: 0.015625 s, Real time: 0.015991 s
+[to_csv] -> CPU time: 0.000000 s, Real time: 0.002002 s
+[to_json] -> CPU time: 0.000000 s, Real time: 0.002997 s
+[main] -> CPU time: 0.296875 s, Real time: 0.620741 s
