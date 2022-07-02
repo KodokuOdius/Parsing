@@ -1,11 +1,32 @@
 import requests as req
 from bs4 import BeautifulSoup
+import json
+import csv
 from typing import *
 
 
+def to_json(data, _file_name="data.json", open_type="wt"):
+    with open(f"./{_file_name}", open_type, encoding="utf-8") as _json:
+        json.dump(
+            data, _json
+        )
+
+
+def to_csv(data, _file_name="data.csv", open_type="wt"):
+    with open(f"./{_file_name}", open_type, encoding="utf-8") as _file:
+        writer = csv.writer(_file)
+        for key in data.keys():
+            writer.writerow([
+                key,
+                *data[key].values()
+            ])
+
+
 def get_html(url: str):
-    resp = req.get(url)
-    return resp.text
+    response = req.get(url)
+    if response.ok:
+        return response.text
+    print(response.status_code)
 
 
 def get_data(html: str):
