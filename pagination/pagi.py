@@ -3,13 +3,14 @@ import os
 
 sys.path.insert(1, os.path.join(sys.path[0], ".."))
 from main import *
-from clock import log_time
+from clock import log_time, Timer
+Timer.set_file("pagilog.txt")
 
 
 def get_cy(cit: str):
     return cit.split()[-1]
 
-
+@log_time
 def get_data(page):
     html = BeautifulSoup(page, "lxml")
     list_items = html.find(
