@@ -12,6 +12,12 @@ def to_json(data, _file_name="data.json", open_type="wt"):
             data, _json
         )
 
+async def ato_json(data, _file_name="data.json", open_type="wt"):
+    with open(f"./{_file_name}", open_type, encoding="utf-8") as _json:
+        json.dump(
+            data, _json
+        )
+
 
 def from_json(_file_name: str):
     with open(f"./{_file_name}", "rt", encoding="utf-8") as _json:
@@ -41,6 +47,17 @@ def to_csv(data, _file_name="data.csv", open_type="wt"):
                 *data[key].values()
             ])
 
+async def ato_csv(data, _file_name="data.csv", open_type="wt"):
+    with open(f"./{_file_name}", open_type, encoding="utf-8") as _file:
+        writer = csv.writer(_file,
+            delimiter=","
+        )
+        for key in data.keys():
+            writer.writerow([
+                key,
+                *data[key].values()
+            ])            
+
 
 def from_csv(_file_name: str):
     with open(f"./{_file_name}", "rt") as _data:
@@ -48,8 +65,8 @@ def from_csv(_file_name: str):
     return reader
 
 
-def get_html(url: str):
-    response = req.get(url)
+def get_html(url: str, **kwargs):
+    response = req.get(url, **kwargs)
     if response.ok:
         return response.text
     print(response.status_code)

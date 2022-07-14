@@ -12,7 +12,7 @@ class Timer:
     def set_file(cls, file_name):
         cls._file = file_name
 
-    def __enter__(self) -> None:
+    def __enter__(self) -> None:    
         self.real, self.cpu = self.get_time()
 
     def __exit__(self, exc_type, exc_val, exc_tb) -> None:
